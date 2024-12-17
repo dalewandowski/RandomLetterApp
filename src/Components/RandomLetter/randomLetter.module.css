@@ -1,0 +1,8 @@
+.randomLetter {
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 5px 5px 15px rgb(3, 3, 3);
+  color: #edf1ec;
+}
