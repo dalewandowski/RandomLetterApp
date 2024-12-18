@@ -6,3 +6,16 @@
   text-shadow: 5px 5px 15px rgb(3, 3, 3);
   color: #edf1ec;
 }
+
+.startButton {
+  font-size: 2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #3d3d3dea;
+  margin-bottom: 150px;
+  transition: background-color, box-shadow 0.3s ease-in-out;
+}
+.startButton:hover {
+  background-color: #3d3d3dc4;
+  box-shadow: 2px 2px 25px rgb(3, 3, 3);
+}

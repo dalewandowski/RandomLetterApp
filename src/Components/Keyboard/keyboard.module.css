@@ -5,10 +5,10 @@ body {
   height: 100vh;
   background-image: linear-gradient(
     45deg,
-    rgb(90, 55, 136),
-    rgb(126, 35, 35),
-    rgb(43, 109, 65),
-    rgb(37, 36, 114)
+    rgb(111, 41, 202),
+    rgb(196, 66, 66),
+    rgb(37, 170, 81),
+    rgb(22, 19, 204)
   );
 
   margin: 0px;
@@ -22,25 +22,26 @@ body {
   font-size: 24px;
   text-align: center;
   box-shadow: 5px 5px 25px rgb(12, 12, 12);
-  padding: 15px;
+  padding: 10px;
   background-color: rgba(56, 53, 48, 0.5);
-  max-width: 690px;
+  max-width: 900px;
   backdrop-filter: blur(55px);
   border-radius: 10px;
 }
 
 .letterButton {
   text-transform: uppercase;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 9px;
   border-radius: 5px;
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   box-shadow: 5px 5px 25px rgb(20, 20, 20);
   background-color: rgb(53, 56, 58);
+  transition: background-color 0.3s ease-in-out;
 }
 
-@media (max-width: 724px) {
+@media (max-width: 964px) {
   .container {
     text-align: center;
     font-size: 18px;
@@ -48,15 +49,15 @@ body {
   }
 
   .letterButton {
-    height: 45px;
-    width: 45px;
-    margin: 9px;
+    height: 50px;
+    width: 50px;
+    margin: 6px;
   }
 }
-@media (max-width: 661px) {
+@media (max-width: 727px) {
   .letterButton {
-    height: 35px;
-    width: auto;
-    margin: 9px;
+    height: 38px;
+    width: 38px;
+    margin: 3px;
   }
 }
