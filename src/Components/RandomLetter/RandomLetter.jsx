@@ -9,13 +9,11 @@ function RandomLetter() {
 
   /////// Get Random Letter //////
   function getRandomLetter() {
-    setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * 26);
-      const randomLetter = String.fromCharCode(randomIndex + 65);
-      setRandomLetter(randomLetter);
-      speakLetter(randomLetter);
-      console.log(randomLetter);
-    }, 1000);
+    const randomIndex = Math.floor(Math.random() * 26);
+    const randomLetter = String.fromCharCode(randomIndex + 65);
+    speakLetter(randomLetter);
+    setRandomLetter(randomLetter);
+    console.log(randomLetter);
   }
 
   /////// Start Game //////
@@ -26,8 +24,8 @@ function RandomLetter() {
 
   //////// Sounds //////
   function playSound(isCorrect) {
-    const correct = new Audio("../public/sounds/correct.mp3");
-    const incorrect = new Audio("../public/sounds/incorrect.mp3");
+    const correct = new Audio("../sounds/correct.mp3");
+    const incorrect = new Audio("../sounds/incorrect.mp3");
 
     if (isCorrect) {
       correct.play();

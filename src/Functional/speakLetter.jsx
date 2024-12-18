@@ -14,7 +14,6 @@ export default function speakLetter(randomLetter) {
     window.speechSynthesis.speak(speak);
     console.log(voices);
   } else {
-    const error = new SpeechSynthesisUtterance("NIEPRAWIDŁOWA LITERA");
-    window.speechSynthesis.speak(error);
+    return;
   }
 }
