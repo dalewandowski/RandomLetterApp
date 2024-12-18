@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Keyboard from "../Keyboard/Keyboard";
-import style from "./randomletter.module.css";
+import style from "./randomLetter.module.css";
 import speakLetter from "../../Functional/speakLetter";
 
 function RandomLetter() {
