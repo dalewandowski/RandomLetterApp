@@ -3,8 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
   text-shadow: 5px 5px 15px rgb(3, 3, 3);
-  color: #edf1ec;
+  color: #fdfdfd;
 }
 
 .startButton {
@@ -12,7 +13,7 @@
   border-radius: 10px;
   border: none;
   background-color: #3d3d3dea;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   transition: background-color, box-shadow 0.3s ease-in-out;
 }
 .startButton:hover {

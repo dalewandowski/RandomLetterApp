@@ -1,19 +1,21 @@
 export default function speakLetter(randomLetter) {
-  if ("speechSynthesis" in window) {
-    const speak = new SpeechSynthesisUtterance(randomLetter);
-    speak.lang = "pl-PL";
-    speak.rate = 0.8;
-    speak.pitch = 0.9;
-    const voices = window.speechSynthesis.getVoices();
+  setTimeout(() => {
+    if ("speechSynthesis" in window) {
+      const speak = new SpeechSynthesisUtterance(randomLetter);
+      speak.lang = "pl-PL";
+      speak.rate = 0.8;
+      speak.pitch = 0.9;
+      const voices = window.speechSynthesis.getVoices();
 
-    const selectedVoice = voices.find(
-      (voice) => voice.name === "Google polski"
-    );
-    speak.voice = selectedVoice;
+      const selectedVoice = voices.find(
+        (voice) => voice.name === "Google polski"
+      );
+      speak.voice = selectedVoice;
 
-    window.speechSynthesis.speak(speak);
-    console.log(voices);
-  } else {
-    return;
-  }
+      window.speechSynthesis.speak(speak);
+      console.log(voices);
+    } else {
+      return;
+    }
+  }, 100);
 }

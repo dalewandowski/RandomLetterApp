@@ -1,7 +1,8 @@
 import { useState } from "react";
 import style from "./keyboard.module.css";
+import { motion } from "motion/react";
 
-function Keyboard({ randomLetter, isGameStarted }) {
+function Keyboard({ randomLetter, isGameStarted, onClick }) {
   const [rows, setRows] = useState([
     ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
     ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
@@ -9,11 +10,16 @@ function Keyboard({ randomLetter, isGameStarted }) {
   ]);
 
   return (
-    <div className={style.container}>
+    <motion.div
+      initial={{ x: -2000 }}
+      animate={{ x: 0 }}
+      className={style.container}
+    >
       {rows.map((row, rowIndex) => (
         <div key={rowIndex} className={style.row}>
           {row.map((letter, index) => (
             <button
+              onClick={() => onClick(letter)}
               style={
                 randomLetter === letter.toUpperCase() && isGameStarted
                   ? { backgroundColor: "orange" }
@@ -27,7 +33,7 @@ function Keyboard({ randomLetter, isGameStarted }) {
           ))}
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 

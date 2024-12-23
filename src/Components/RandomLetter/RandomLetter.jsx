@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import Keyboard from "../Keyboard/Keyboard";
 import style from "./randomLetter.module.css";
 import speakLetter from "../../Functional/speakLetter";
-
+import { motion, AnimatePresence } from "motion/react";
 function RandomLetter() {
   const [randomLetter, setRandomLetter] = useState("");
   const [isGameStarted, setIsGameStarted] = useState(false);
+  const [score, setScore] = useState(0);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   /////// Get Random Letter //////
   function getRandomLetter() {
@@ -34,6 +36,24 @@ function RandomLetter() {
     }
   }
 
+  ///// onClick Letter //////
+  function handleClickLetter(letter) {
+    if (isGameStarted) {
+      if (letter.toUpperCase() === randomLetter) {
+        playSound(true);
+        setIsCorrect(true);
+        setScore((prevScore) => prevScore + 1);
+        getRandomLetter();
+      } else {
+        playSound(false);
+        setIsCorrect(isCorrect);
+        setScore((prevScore) => prevScore);
+      }
+    }
+  }
+
+  //////// SCORE ///////
+
   ///////// Use Effects //////
   useEffect(() => {
     getRandomLetter();
@@ -43,6 +63,8 @@ function RandomLetter() {
     const handleKeyup = (e) => {
       if (isGameStarted && e.key.toUpperCase() === randomLetter) {
         playSound(true);
+        setIsCorrect(true);
+        setScore((prevScore) => prevScore + 1);
         getRandomLetter();
       } else if (isGameStarted) {
         playSound(false);
@@ -56,14 +78,36 @@ function RandomLetter() {
 
   return (
     <>
-      {!isGameStarted ? (
-        <button className={style.startButton} onClick={startGame}>
-          Start Gry
-        </button>
-      ) : (
-        <h1 className={style.randomLetter}>{randomLetter.toUpperCase()}</h1>
-      )}
-      <Keyboard isGameStarted={isGameStarted} randomLetter={randomLetter} />
+      <p>SCORE: {score}</p>{" "}
+      <AnimatePresence mode="popLayout">
+        {!isGameStarted ? (
+          <motion.button
+            whileTap={{ y: 200 }}
+            initial={{ scale: 1 }}
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 1, easing: "easeIn", repeat: Infinity }}
+            key={isGameStarted}
+            className={style.startButton}
+            onClick={startGame}
+          >
+            Start Gry
+          </motion.button>
+        ) : (
+          <motion.span
+            className={style.randomLetter}
+            initial={{ opacity: 0, y: -1000 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {randomLetter.toUpperCase()}
+          </motion.span>
+        )}
+      </AnimatePresence>
+      <Keyboard
+        onClick={handleClickLetter}
+        isGameStarted={isGameStarted}
+        randomLetter={randomLetter}
+      />
     </>
   );
 }
