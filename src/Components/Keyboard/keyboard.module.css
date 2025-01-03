@@ -3,10 +3,10 @@
   box-shadow: 5px 5px 25px rgb(12, 12, 12);
   padding: 10px 15px;
   background-color: rgba(56, 53, 48, 0.5);
-
+  width: 100%;
   backdrop-filter: blur(15px);
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 5%;
 }
 
 .letterButton {

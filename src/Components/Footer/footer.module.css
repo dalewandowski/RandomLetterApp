@@ -1,0 +1,10 @@
+.footer {
+  color: rgba(255, 255, 245, 0.863);
+  background-color: #474545c5;
+  text-align: center;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}

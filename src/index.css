@@ -1,17 +1,19 @@
 body {
   color-scheme: light dark;
-  margin: 0px;
+  margin: 0;
   padding: 0;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: end;
+  flex-wrap: wrap;
   height: 100vh;
+
   background-image: url("../public/background/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-clip: border-box;
+
+  overflow: hidden;
 }
 
 button {

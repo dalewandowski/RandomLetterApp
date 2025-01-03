@@ -8,6 +8,14 @@
   color: #fdfdfd;
 }
 
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
 .startButton {
   margin: 0 auto;
   display: block;

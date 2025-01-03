@@ -3,11 +3,14 @@ import Keyboard from "../Keyboard/Keyboard";
 import style from "./randomLetter.module.css";
 import speakLetter from "../../Functional/speakLetter";
 import { motion, AnimatePresence } from "motion/react";
+import { use } from "react";
+
 function RandomLetter() {
   const [randomLetter, setRandomLetter] = useState("");
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [isIncorrect, setIsIncorrect] = useState(false);
 
   /////// Get Random Letter //////
   function getRandomLetter() {
@@ -21,6 +24,7 @@ function RandomLetter() {
   /////// Start Game //////
   function startGame() {
     setIsGameStarted(true);
+    setScore(0);
     getRandomLetter();
   }
 
@@ -43,16 +47,16 @@ function RandomLetter() {
         playSound(true);
         setIsCorrect(true);
         setScore((prevScore) => prevScore + 1);
+
         getRandomLetter();
       } else {
         playSound(false);
-        setIsCorrect(isCorrect);
-        setScore((prevScore) => prevScore);
       }
     }
   }
 
   ///////// Use Effects //////
+
   useEffect(() => {
     getRandomLetter();
   }, []);
@@ -63,6 +67,7 @@ function RandomLetter() {
         playSound(true);
         setIsCorrect(true);
         setScore((prevScore) => prevScore + 1);
+
         getRandomLetter();
       } else if (isGameStarted) {
         playSound(false);
@@ -98,7 +103,7 @@ function RandomLetter() {
               opacity: 1,
               y: 0,
             }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, repeat: 0 }}
           >
             {randomLetter.toUpperCase()}
           </motion.span>
