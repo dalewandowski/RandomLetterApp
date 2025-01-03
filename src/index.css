@@ -7,13 +7,10 @@ body {
   align-items: end;
   flex-wrap: wrap;
   height: 100vh;
-
   background-image: url("../public/background/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  overflow: hidden;
 }
 
 button {
