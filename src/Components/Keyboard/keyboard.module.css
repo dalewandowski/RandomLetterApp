@@ -1,16 +1,12 @@
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 24px;
   text-align: center;
   box-shadow: 5px 5px 25px rgb(12, 12, 12);
-  padding: 10px;
+  padding: 10px 15px;
   background-color: rgba(56, 53, 48, 0.5);
-  width: 900px;
-  backdrop-filter: blur(55px);
+
+  backdrop-filter: blur(15px);
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .letterButton {
@@ -28,7 +24,6 @@
 @media (max-width: 964px) {
   .container {
     font-size: 16px;
-    width: 95%;
   }
 
   .letterButton {
@@ -39,13 +34,9 @@
 }
 
 @media (max-width: 719px) {
-  .container {
-    width: 100%;
-  }
-
   .letterButton {
-    height: 35px;
-    width: 35px;
-    margin: 3px;
+    height: 32px;
+    width: 32px;
+    margin: 2px;
   }
 }
