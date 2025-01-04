@@ -10,30 +10,32 @@ function Keyboard({ randomLetter, isGameStarted, onClick }) {
   ]);
 
   return (
-    <motion.div
-      initial={{ x: -2000 }}
-      animate={{ x: 0 }}
-      className={style.container}
-    >
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className={style.row}>
-          {row.map((letter, index) => (
-            <button
-              onClick={() => onClick(letter)}
-              style={
-                randomLetter === letter.toUpperCase() && isGameStarted
-                  ? { backgroundColor: "orange" }
-                  : {}
-              }
-              className={style.letterButton}
-              key={index}
-            >
-              {letter.toUpperCase()}
-            </button>
-          ))}
-        </div>
-      ))}
-    </motion.div>
+    <div>
+      <motion.div
+        initial={{ x: -2000 }}
+        animate={{ x: 0 }}
+        className={style.container}
+      >
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} className={style.row}>
+            {row.map((letter, index) => (
+              <button
+                onClick={() => onClick(letter)}
+                style={
+                  randomLetter === letter.toUpperCase() && isGameStarted
+                    ? { backgroundColor: "orange" }
+                    : {}
+                }
+                className={style.letterButton}
+                key={index}
+              >
+                {letter.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 }
 

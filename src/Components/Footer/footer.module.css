@@ -3,6 +3,7 @@
   background-color: rgba(56, 53, 48, 0.6);
   text-align: center;
   height: 25px;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

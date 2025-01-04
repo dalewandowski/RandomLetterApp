@@ -80,42 +80,43 @@ function RandomLetter() {
   }, [randomLetter]);
 
   return (
-    <>
-      <p className={style.scoreParagraph}>SCORE: {score}</p>{" "}
-      <AnimatePresence mode="popLayout">
-        {!isGameStarted ? (
-          <motion.button
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 1, easing: "easeIn", repeat: Infinity }}
-            key={isGameStarted}
-            className={style.startButton}
-            onClick={startGame}
-          >
-            Start Gry
-          </motion.button>
-        ) : (
-          <motion.span
-            key={isGameStarted}
-            className={style.randomLetter}
-            initial={{ opacity: 0, y: -1000 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{ duration: 0.5, repeat: 0 }}
-          >
-            {randomLetter.toUpperCase()}
-          </motion.span>
-        )}
-      </AnimatePresence>
+    <main>
+      <div>
+        <p className={style.scoreParagraph}>SCORE: {score}</p>{" "}
+        <AnimatePresence mode="popLayout">
+          {!isGameStarted ? (
+            <motion.button
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 1, easing: "easeIn", repeat: Infinity }}
+              key={isGameStarted}
+              className={style.startButton}
+              onClick={startGame}
+            >
+              Start Gry
+            </motion.button>
+          ) : (
+            <motion.span
+              key={isGameStarted}
+              className={style.randomLetter}
+              initial={{ opacity: 0, y: -1000 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{ duration: 0.5, repeat: 0 }}
+            >
+              {randomLetter.toUpperCase()}
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </div>
       <Keyboard
         onClick={handleClickLetter}
         isGameStarted={isGameStarted}
         randomLetter={randomLetter}
       />
-    </>
+    </main>
   );
 }
-
 export default RandomLetter;
