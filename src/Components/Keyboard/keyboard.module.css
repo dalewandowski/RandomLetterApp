@@ -6,7 +6,7 @@
   width: 100%;
   backdrop-filter: blur(15px);
   border-radius: 10px;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .letterButton {
@@ -36,6 +36,7 @@
 @media (max-width: 719px) {
   .container {
     padding: 10px 5px;
+    margin-bottom: 25%;
   }
   .letterButton {
     height: 30x;

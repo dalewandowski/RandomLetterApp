@@ -5,8 +5,8 @@ function Footer() {
   return (
     <footer className={style.footer}>
       <p className={style.textFooter}>
-        &copy; All Rights Reserved {new Date().getFullYear()} Damian Lewandowski
-        &nbsp;&nbsp;
+        Copyright &copy; All Rights Reserved {new Date().getFullYear()} | Damian
+        Lewandowski &nbsp;&nbsp;
         <Mail size={15} /> d.lewandowski94@onet.pl{" "}
       </p>
     </footer>

@@ -7,10 +7,11 @@ body {
   align-items: end;
   flex-wrap: wrap;
   height: 100vh;
-  background-image: url("../public/background/background.png");
+  background-image: url("../public/background/background2.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
@@ -19,7 +20,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
+
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
