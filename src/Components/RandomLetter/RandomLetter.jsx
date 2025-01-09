@@ -15,7 +15,7 @@ function RandomLetter() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [isIncorrect, setIsIncorrect] = useState(false);
   const [answerColor, setAnswerColor] = useState("");
-  const [time, setTime] = useState(1000);
+  const [time, setTime] = useState(10000);
 
   const correctSound = new Audio("../sounds/correct.mp3");
   const incorrectSound = new Audio("../sounds/incorrect.mp3");
@@ -68,24 +68,24 @@ function RandomLetter() {
     };
   }, [randomLetter]);
 
-  useChallengeTimer(
-    isGameStarted,
-    score,
-    setScore,
-    getRandomLetter,
-    setRandomLetter,
-    time,
-    setTime
-  );
+  // useChallengeTimer(
+  //   isGameStarted,
+  //   score,
+  //   setScore,
+  //   getRandomLetter,
+  //   setRandomLetter,
+  //   time,
+  //   setTime
+  // );
 
-  const handleChallengeClick = () => {
-    setIsGameStarted(true);
-  };
+  // const handleChallengeClick = () => {
+  //   getRandomLetter(setRandomLetter);
+  // };
 
   return (
     <main>
-      <Challenge onClickHandler={handleChallengeClick} />
-      <p>Zmiana litery za: {time / 1000} sekund</p>
+      {/* <Challenge onClickHandler={handleChallengeClick} />
+      <p>Zmiana litery za: {time / 1000} sekund</p> */}
       <div>
         <p className={style.scoreParagraph}>SCORE: {score}</p>
         <AnimatePresence mode="popLayout">

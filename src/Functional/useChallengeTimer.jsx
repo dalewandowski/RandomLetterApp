@@ -10,18 +10,26 @@ export default function useChallengeTimer(
   setTime
 ) {
   useEffect(() => {
-    getRandomLetter(setRandomLetter); // Zmień literę
-    if (!isGameStarted) return; // Jeśli gra się nie rozpoczęła, nie rób nic
-
+    if (!isGameStarted) return;
+    getRandomLetter(setRandomLetter);
     const interval = setInterval(() => {
-      getRandomLetter(setRandomLetter); // Zmień literę
-      if (score === 3) {
+      if (score === 10) {
+        clearInterval(interval);
+
         setScore(0);
-        setTime((prevTime) => Math.max(prevTime - 1000, 1000)); // Skróć czas, minimum 1 sekunda
-        console.log(time);
+        setTime((prevTime) => Math.max(prevTime - 1000, 1000));
       }
+      console.log("elo elo", time);
     }, time);
 
-    return () => clearInterval(interval); // Wyczyść interwał przy demontażu komponentu lub zmianie zależności
-  }, [isGameStarted, score, time, getRandomLetter, setRandomLetter, setTime]);
+    return () => clearInterval(interval);
+  }, [
+    isGameStarted,
+    score,
+    time,
+    getRandomLetter,
+    setRandomLetter,
+    setTime,
+    setScore,
+  ]);
 }
