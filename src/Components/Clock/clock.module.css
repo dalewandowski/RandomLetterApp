@@ -1,7 +1,7 @@
 .clock {
   font-family: "DynaPuff", serif;
   color: hsla(273, 67%, 54%, 0.603);
-  position: absolute;
+  position: fixed;
   top: 3vh;
   left: 3vw;
   font-size: 3rem;

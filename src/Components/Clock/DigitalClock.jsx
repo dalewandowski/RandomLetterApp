@@ -5,18 +5,17 @@ function DigitalClock() {
   const [fullTime, setFullTime] = useState("");
 
   useEffect(() => {
-    setInterval(() => {
+    const updateClock = () => {
       const clock = new Date();
-      clock.setSeconds(clock.getSeconds() + 1);
       let hours = String(clock.getHours()).padStart(2, "0");
       let minutes = String(clock.getMinutes()).padStart(2, "0");
       let sec = String(clock.getSeconds()).padStart(2, "0");
       setFullTime(`${hours}:${minutes}:${sec}`);
-    }, 1000);
-
-    return () => {
-      clearInterval();
     };
+
+    updateClock();
+    const interval = setInterval(updateClock, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return <div className={style.clock}>{`${fullTime}`}</div>;
