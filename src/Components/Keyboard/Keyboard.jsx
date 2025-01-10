@@ -14,6 +14,7 @@ function Keyboard({ randomLetter, isGameStarted, onClick }) {
       <motion.div
         initial={{ x: -2000 }}
         animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
         className={style.container}
       >
         {rows.map((row, rowIndex) => (

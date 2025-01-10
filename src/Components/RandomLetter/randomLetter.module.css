@@ -42,6 +42,18 @@
   color: #fdfdfd;
 }
 
+.timeLeft {
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  background-color: #3d3d3dc4;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #fdfdfd;
+  padding: 5px 10px;
+}
 @media (max-width: 964px) {
   .randomLetter {
     font-size: 4rem;

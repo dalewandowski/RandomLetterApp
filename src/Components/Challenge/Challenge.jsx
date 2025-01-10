@@ -1,10 +1,17 @@
-import style from "../RandomLetter/randomLetter.module.css";
-function Challenge({ onClickHandler }) {
+export default function Challenge({
+  handleStartChallenge,
+  timeLeft,
+  className,
+}) {
   return (
-    <button className={style.startButton} onClick={onClickHandler}>
-      Get Challenge !
-    </button>
+    <>
+      <button
+        onClick={handleStartChallenge}
+        type="button"
+        className={className}
+      >
+        Graj Na czas!
+      </button>
+    </>
   );
 }
-
-export default Challenge;
