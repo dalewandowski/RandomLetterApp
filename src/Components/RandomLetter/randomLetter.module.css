@@ -16,7 +16,8 @@
   color: red;
 }
 
-.startButton {
+.startButton,
+.resetButton {
   margin: 0 auto;
   display: block;
   font-size: 2rem;
@@ -26,11 +27,23 @@
   margin-bottom: 10vh;
   transition: background-color, box-shadow 0.3s ease-in-out;
 }
-.startButton:hover {
+.startButton:hover,
+.resetButton:hover {
   background-color: #3d3d3dc4;
   box-shadow: 2px 2px 25px rgb(3, 3, 3);
 }
 
+.startButton:active,
+.resetButton:active {
+  background-color: orange;
+}
+
+.resetButton {
+  position: fixed;
+  top: 55px;
+  left: 25px;
+  font-size: 1rem;
+}
 .scoreParagraph {
   position: fixed;
   top: 10px;
@@ -42,9 +55,21 @@
   color: #fdfdfd;
 }
 
+.timeLeft {
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3d3d3dc4;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #fdfdfd;
+  padding: 5px 10px;
+}
 @media (max-width: 964px) {
   .randomLetter {
     font-size: 4rem;
+    margin-bottom: 14px;
   }
   .startButton {
     font-size: 1.2rem;
@@ -52,5 +77,12 @@
 
   .scoreParagraph {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .timeLeft {
+    font-size: 0.6rem;
+    margin-top: 32px;
   }
 }
